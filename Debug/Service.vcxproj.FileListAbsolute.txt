@@ -1,0 +1,8 @@
+C:\Users\misha\source\repos\Cafee\Debug\Service.vcxprojAssemblyReference.cache
+C:\Users\misha\source\repos\Cafee\Debug\Cafee.Add.resources
+C:\Users\misha\source\repos\Cafee\Debug\Cafee.ChangeAndDelete.resources
+C:\Users\misha\source\repos\Cafee\Debug\Cafee.MainForm.resources
+C:\Users\misha\source\repos\Cafee\Debug\Cafee.MyForm.resources
+C:\Users\misha\source\repos\Cafee\Debug\Service.vcxproj.GenerateResource.cache
+C:\Users\misha\source\repos\Cafee\Debug\Service.exe
+C:\Users\misha\source\repos\Cafee\Debug\Service.pdb

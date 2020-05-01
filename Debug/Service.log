@@ -1,0 +1,19 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (Cafee.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  Add.cpp
+  ChangeAndDelete.cpp
+C:\Users\misha\source\repos\Cafee\ChangeAndDelete.h(285,14): warning C4018: >=: несоответствие типов со знаком и без знака
+C:\Users\misha\source\repos\Cafee\ChangeAndDelete.h(303,14): warning C4018: >=: несоответствие типов со знаком и без знака
+  MaintenanceService.cpp
+  TireService.cpp
+  DiskRepair.cpp
+  MainForm.cpp
+C:\Users\misha\source\repos\Cafee\ChangeAndDelete.h(285,14): warning C4018: >=: несоответствие типов со знаком и без знака
+C:\Users\misha\source\repos\Cafee\ChangeAndDelete.h(303,14): warning C4018: >=: несоответствие типов со знаком и без знака
+  Service.cpp
+  MyForm.cpp
+  Source.cpp
+C:\Users\misha\source\repos\Cafee\Source.cpp(10,24): warning C4018: <: несоответствие типов со знаком и без знака
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Создание кода...
+  Add.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  Service.vcxproj -> C:\Users\misha\source\repos\Cafee\Debug\Service.exe
