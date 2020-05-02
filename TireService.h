@@ -6,7 +6,7 @@ using namespace std;
 class TireService :
 	public Service
 {
-protected:
+private:
 	string diametr;
 public:
 	TireService(string name1, int cost1, string d);
