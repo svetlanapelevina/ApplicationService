@@ -2,7 +2,7 @@
 #include "Service.h"
 class MaintenanceService : public Service
 {
-protected:
+private:
 	string conclusion;
 public:
 	MaintenanceService(string name1, int cost1, string type1);
