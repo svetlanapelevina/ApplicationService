@@ -134,7 +134,7 @@ namespace CarService {
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Шиномонтаж", L"Ремонт дисков", L"Техобслуживание" });
 			this->comboBox1->Location = System::Drawing::Point(217, 3);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(208, 26);
+			this->comboBox1->Size = System::Drawing::Size(208, 22);
 			this->comboBox1->TabIndex = 1;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Add::comboBox1_SelectedIndexChanged);
 			// 
@@ -183,7 +183,7 @@ namespace CarService {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox1->Location = System::Drawing::Point(217, 58);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(208, 26);
+			this->textBox1->Size = System::Drawing::Size(208, 22);
 			this->textBox1->TabIndex = 3;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Add::textBox1_TextChanged);
 			// 
@@ -194,7 +194,7 @@ namespace CarService {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox2->Location = System::Drawing::Point(217, 108);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(208, 26);
+			this->textBox2->Size = System::Drawing::Size(208, 22);
 			this->textBox2->TabIndex = 4;
 			// 
 			// textBox3
@@ -204,7 +204,7 @@ namespace CarService {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox3->Location = System::Drawing::Point(217, 161);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(208, 26);
+			this->textBox3->Size = System::Drawing::Size(208, 22);
 			this->textBox3->TabIndex = 5;
 			// 
 			// label3
@@ -227,7 +227,7 @@ namespace CarService {
 			this->label4->AutoSize = true;
 			this->label4->Location = System::Drawing::Point(3, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(208, 19);
+			this->label4->Size = System::Drawing::Size(208, 16);
 			this->label4->TabIndex = 6;
 			this->label4->Text = L"Тип";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -235,7 +235,7 @@ namespace CarService {
 			// 
 			// Add
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 18);
+			this->AutoScaleDimensions = System::Drawing::SizeF(7, 14);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(540, 404);
 			this->Controls->Add(this->tableLayoutPanel1);
@@ -252,21 +252,44 @@ namespace CarService {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (textBox1->Text->CompareTo("") == 0)
+		{
+			MessageBox::Show("Введите имя клиента!", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 		string newName = msclr::interop::marshal_as<std::string>(textBox1->Text);
+		if (textBox2->Text->CompareTo("") == 0)
+		{
+			MessageBox::Show("Введите стоимость!", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 		string newCost = msclr::interop::marshal_as<std::string>(textBox2->Text);
 		string newInfo = msclr::interop::marshal_as<std::string>(textBox3->Text);
 		switch (comboBox1->SelectedIndex)
 		{
 		case 0:
-			Source::AllServices->push_back(new TireService(newName, atoi(newCost.c_str()), newInfo)); break;
+			Source::AllServices->push_back(new TireService(newName, atoi(newCost.c_str()), newInfo)); 
+			MessageBox::Show("Услуга успешно добавлена", "",
+				MessageBoxButtons::OK,
+				MessageBoxIcon::Information);
+			break;
 		case 1:
-			Source::AllServices->push_back(new DiskRepair(newName, atoi(newCost.c_str()), newInfo)); break;
+			Source::AllServices->push_back(new DiskRepair(newName, atoi(newCost.c_str()), newInfo)); 
+			MessageBox::Show("Услуга успешно добавлена", "",
+				MessageBoxButtons::OK,
+				MessageBoxIcon::Information);
+			break;
 		case 2:
-			Source::AllServices->push_back(new MaintenanceService(newName, atoi(newCost.c_str()), newInfo)); break;
+			Source::AllServices->push_back(new MaintenanceService(newName, atoi(newCost.c_str()), newInfo)); 
+			MessageBox::Show("Услуга успешно добавлена", "",
+				MessageBoxButtons::OK,
+				MessageBoxIcon::Information);
+			break;
+		default:
+			MessageBox::Show("Укажите тип!", "",
+				MessageBoxButtons::OK,
+				MessageBoxIcon::Error);
 		}
-		auto result = MessageBox::Show("Услуга успешно добавлена", "",
-			MessageBoxButtons::OK,
-			MessageBoxIcon::Information);
 	}
 	private: System::Void checkedListBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}

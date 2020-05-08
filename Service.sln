@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Service", "Cafee\Service.vcxproj", "{BBF3452C-C294-467C-89A1-48727409310F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Service", "Service.vcxproj", "{BBF3452C-C294-467C-89A1-48727409310F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C08B0AB4-7A4E-4982-AE1B-21F777E2C3CB}
+		SolutionGuid = {DD6020E2-13A4-4FF5-A15A-A43D4AF76609}
 	EndGlobalSection
 EndGlobal

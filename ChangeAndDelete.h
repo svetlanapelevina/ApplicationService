@@ -303,17 +303,30 @@ private: System::Void buttonChange_Click(System::Object^ sender, System::EventAr
 		if (number >= Source::AllServices->size()) MessageBox::Show("Неверый номер!", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		else
 		{
+			if (textBoxNew->Text->CompareTo("") == 0)
+			{
+				MessageBox::Show("Введите новое значение!", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return;
+			}
 			string newww = msclr::interop::marshal_as<std::string>(textBoxNew->Text);
 			switch (comboBoxField->SelectedIndex)
 			{
 			case 0:
-				Source::changeName(number, newww); break;
+				Source::changeName(number, newww);
+				MessageBox::Show("Изменения сохранены", "Успешно",
+					MessageBoxButtons::OK,
+					MessageBoxIcon::Information);
+				break;
 			case 1:
-				Source::changeCost(number, newww); break;
+				Source::changeCost(number, newww); 
+				MessageBox::Show("Изменения сохранены", "Успешно",
+					MessageBoxButtons::OK,
+					MessageBoxIcon::Information);
+				break;
+			default:
+				MessageBox::Show("Укажите поле!", "", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
-			MessageBox::Show("Изменения сохранены", "Успешно",
-				MessageBoxButtons::OK,
-				MessageBoxIcon::Information);
+			
 		}
 	}
 }
